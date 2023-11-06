@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        function nullcheck(){
+            var name = document.getElementById( 'name' ).value;
+            var addr = document.getElementById( 'addr' ).value;
+            var type = document.getElementById( 'type' ).value;
+
+            if( name != "" && addr != "" && type != "") {
+                alert('등록 완료');
+                return true;
+            }
+            alert('빈 칸 없이 입력');
+            return  false;
+        }
+    </script>
+
+</head>
+<body>
+
+<form action="/joinInsert" method="post" onsubmit="return nullcheck();">
+
+   이름 <input type="text" name="name" required id="name">
+    <br/>
+    주소 <input type="text" name="addr" required id="addr">
+    <br/>
+    타입 <input type="text" name="type" required id="type">
+    <br/>
+    <input type="submit" value="전송">
+</form>
+
+</body>
+</html>

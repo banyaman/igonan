@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+
+    <title>Title</title>
+</head>
+
+<body>
+
+<h2 class="a"></h2>
+<table style="text-align: center">
+    <tr><th>번호</th><th>이름</th><th>주소</th><th>타입</th></tr>
+</table>
+<a href="/join">등록/수정</a>
+
+
+</body>
+<script>
+    var iddx = 0;
+    let ttt = "/deleteUser?name=";
+    $(document).ready(function(){
+        $.ajax({
+            type : "POST",
+            url : "/usersreturn",
+            dataType : "json",
+            success : function(data){
+
+                for(var i in data){
+                    var table = "<tr>"
+                    table += "<td>"+ ++iddx+"</td>"
+                    table += "<td>"+data[i].name+"</td>"
+                    table += "<td>"+data[i].addr+"</td>"
+                    table += "<td>"+data[i].type+"</td>"
+                   // table += "<td><a href='"+ttt+data[i].name+"'>삭제</a></td>"
+                    table += `<td><button type="button" onclick="if(confirm('정말 삭제하시겠습니까?'))location.href='` +ttt + data[i].name+ `'">삭제</button> </td>`
+                    //table += "<td><button type='button' onclick='location.href=" +ttt + data[i].name+ "'>삭제</button></td>"
+                    table += "</tr>";
+//<input type="button" value="삭제" onClick = "if(confirm('정말 삭제하시겠습니까?')) location.href='delete.jsp?num=<%=num%>'" >
+
+                        $('table').append(table);
+
+                }
+
+            }
+        });
+
+
+    });
+
+</script>
+</html>

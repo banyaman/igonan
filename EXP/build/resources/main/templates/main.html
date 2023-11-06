@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+    <script src="/js/main.js"></script>
+    <link rel="stylesheet" href="css/main.css">
+    <title>Title</title>
+</head>
+
+<body>
+<h1 class="a">sdadasd</h1>
+
+<form action="/foodInsert" method="post">
+    <div class="annihilator">
+        <div class="row">
+            <span class="asd">이름</span>
+            <input type="text" class="zxc" name="name" required id="name">
+        </div>
+        <div class="row">
+            <span class="asd">주소</span>
+             <input type="text" class="zxc" name="addr" required id="addr">
+        </div>
+        <div class="row">
+            <span class="asd">분류</span>
+             <input type="text" class="zxc" name="type" required id="type" placeholder="ex)한식,중식,일식,양식">
+        </div>
+        <div class="row">
+            <span class="asd">대표메뉴</span>
+             <input type="text" class="zxc" name="recommend" required id="recommend">
+        </div>
+
+    </div>
+    <br/>
+    <input type="submit" value="입력 완료">
+    <button type="button"  class="inputCancel">입력 초기화</button>
+</form>
+
+<br/>
+<div>
+    <button type="button" onclick="return false;" id="sortbydate" class="sorttype">최신순</button>
+    <button type="button" onclick="return false;" id="sortbyid" class="sorttype">이름순</button>
+</div>
+<br/>
+<div>
+    <button type="button" onclick="return false;" id="중원구" class="findaddr">중원구</button>
+    <button type="button" onclick="return false;" id="수정구" class="findaddr">수정구</button>
+    <button type="button" onclick="return false;" id="분당구" class="findaddr">분당구</button>
+</div>
+<div>
+    <button type="button" onclick="return false;" id="한식" class="findtype">한식</button>
+    <button type="button" onclick="return false;" id="중식" class="findtype">중식</button>
+    <button type="button" onclick="return false;" id="일식" class="findtype">일식</button>
+    <button type="button" onclick="return false;" id="양식" class="findtype">양식</button>
+</div>
+<br/>
+
+<div>
+
+    대표메뉴 검색 : <input type="text" class="sch" name="recommendsearch" required id="searchforrecommend">
+    <button type="button" onclick="return false;" class="findrecommend">검색</button>
+
+</div>
+
+<br/>
+
+<br/>
+<div id="tableTable">
+
+</div>
+
+<a href="/insert">등록/수정</a>
+
+<script>
+
+</script>
+</body>
+
+
+</html>
