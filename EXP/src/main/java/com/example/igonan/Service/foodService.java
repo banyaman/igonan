@@ -12,7 +12,7 @@ import java.util.List;
 public class foodService {
 
   @Autowired
-   foodRepository foodRepository;
+   private foodRepository foodRepository;
 
     public List<food> findAll(){
         return foodRepository.findAll(Sort.by(Sort.Direction.DESC,"uptime") );
@@ -25,6 +25,9 @@ public class foodService {
         return foodRepository.selectone(name);
     }
     public void inFood(food f){
+        if(f.getName().equals("아이고난")||f.getName().equals("igonan")){
+            System.out.println("아이고난");
+        }
         foodRepository.save(f);
     }
     public void updateFood(food f){

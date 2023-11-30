@@ -29,9 +29,9 @@ $(document).ready(function(){
                 table += "<td>" + data[i].type + "</td>"
                 table += "<td>" + data[i].recommend + "</td>"
                 table += "<td>" + data[i].uptime + "</td>"
-                table += `<td><button type="button" class="lkj" id="`+data[i].name+`">수정</button> </td>`
+                table += `<td><button type="button" class="lkj" id="`+data[i].name+`" th:style="${session.admin != null ? '' : 'display:none'}">수정</button> </td>`
                // table += `<td><button type="button" onclick="location.href='` + utt + data[i].name + `'">수정</button> </td>`
-                table += `<td><button type="button" onclick="if(confirm('정말 삭제하시겠습니까?'))location.href='` + ttt + data[i].name + `'">삭제</button> </td>`
+                table += `<td><button type="button" onclick="if(confirm('정말 삭제하시겠습니까?'))location.href='` + ttt + data[i].name + `'" th:style="${session.admin != null ? '' : 'display:none'}">삭제</button> </td>`
                 table += "</tr>";
 
             }
@@ -86,7 +86,7 @@ $(document).ready(function(){
                     $("#addr").val(data[0].addr);
                     $("#type").val(data[0].type);
                     $("#recommend").val(data[0].recommend);
-                    $("#name").attr('disabled',true);
+                    $("#name").attr('disabled',false);
 
                 }
             });

@@ -1,0 +1,51 @@
+
+<header id="header" th:fragment="header">
+
+  <nav class="navbar navbar-expand-lg bg-body-tertiary col-sm-12">
+    <div class="container-fluid" style="background-color: #B5FFE4;margin-right: 100px;margin-left: 100px">
+      <img src="img/logo.png" alt="igonan">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 a">
+          <li class="nav-item">
+            <button type="button" onclick="return false;" id="sortbydate" class="sorttype">최신순</button>
+            <button type="button" onclick="return false;" id="sortbyid" class="sorttype">이름순</button>
+          </li>
+        </ul>
+
+        <div class="d-flex a" role="search">
+          <input type="text" class="allsearch" name="allSearch" required id="searchForAllofLove">
+          <button class="findAllSearch" type="submit">검색</button>
+        </div>
+
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 a">
+          <li th:style="${session.admin == null ? 'display:inline-block' : 'display:none'}">
+            <a href="/login" th:if="${session.admin == null}" class="navLogin">master login</a>
+          </li>
+          <li th:style="${session.admin != null ? 'display:inline-block' : 'display:none'}">
+            <a href="/logout" th:if="${session.admin != null}" class="navLogin">master logout</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+<footer id="footer" th:fragment="footer">
+  <div id="footer_inner">
+    <div class="col-12 footers">
+      <div class="col-10 footer">
+        <div class="col-12 footer_top">
+          <h2>(주)겨벌랑</h2>
+          <p>사업자등록번호 :  549 - 24 - 81724 | TEL )  031 - 740 - 1925 | PHONE ) 010 - 5519 - 9128</p>
+        </div>
+        <div class="col-12 footer_bottom">
+          <p> 주소 : 경기도 성남시 수정구 오곡코코볼로 200길 68 | CopyRight ⓒ 2023 MATZIP HUB ALL RIGHTS RESERVED</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>

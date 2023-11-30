@@ -1,8 +1,19 @@
-.annihilator{
-    width: 400px;
-
-
+*{
+    margin: 0 auto;
+    box-sizing: border-box;
 }
+.annihilator {
+    width: 400px;
+}
+a{
+    text-decoration: none;
+}
+.alterBtn{
+    margin-left: 10px;
+}
+.deleteBtn{
+     margin-left: 5px;
+ }
 .annihilator > input{
     width: 150px;
     height: 20px;
@@ -21,7 +32,7 @@
     height: 40px;
     font-weight: bold;
 }
-.zxc{
+.zxc {
     flex: 1;
     background-color: white;
     width: 300px;
@@ -30,5 +41,45 @@
     padding: 10px;
     box-sizing: border-box;
     border-color: #333;
+}
+
+/*nav{*/
+/*    width: 100%;*/
+/*    background-color: lightgray;*/
+/*    list-style-type: none;*/
+/*    margin: 0;*/
+/*    align-items: center;*/
+/*    padding-top: 0.5rem;*/
+/*    padding-bottom: 0.5rem;*/
+
+/*}*/
+/*nav ul li{*/
+/*    display: inline-block;*/
+/*}*/
+.allsearch {
+    background-color: white;
+    width: 300px;
+    height: 38px;
+    font-size: 13px;
 
 }
+.igonansearch{
+    float: right;
+    margin-right: 5%;
+}
+
+.navLogin{
+    color: black;
+
+
+}
+.contianer1{
+    margin-right: 100px;
+    margin-left: 100px;
+
+}
+
+
+
+
+

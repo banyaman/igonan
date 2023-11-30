@@ -1,0 +1,28 @@
+
+.a{
+    margin-left: 80px !important;
+    margin-right: 80px !important;
+}
+.sorttype{
+    width: 80px;
+    height: 35px;
+}
+.footers{background-color: #73FFCD;}
+.footer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.footer_top > h2, .footer_top > p{
+    display: inline-block;
+}
+.footer_top > h2{
+    font-weight: bold;
+    font-size: 1.0em;
+}
+#footer{
+    margin-top: 100px;
+}
+.footer_top{
+    margin-top: 30px;
+}
