@@ -25,9 +25,7 @@ public class foodService {
         return foodRepository.selectone(name);
     }
     public void inFood(food f){
-        if(f.getName().equals("아이고난")||f.getName().equals("igonan")){
-            System.out.println("아이고난");
-        }
+
         foodRepository.save(f);
     }
     public void updateFood(food f){

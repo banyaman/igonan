@@ -18,7 +18,7 @@
 
 <div id="contianer1" class="contianer1">
 <div th:style="${session.admin != null ? '' : 'display:none'}">
-<form action="/foodInsert" method="post" style="float: right;margin-right: 5%;"  >
+<form action="/foodInsert" method="post" style="float: right;margin-right: 5%;" enctype="multipart/form-data">
     <div class="annihilator">
         <div class="row">
             <span class="asd">이름</span>
@@ -35,6 +35,10 @@
         <div class="row">
             <span class="asd">대표메뉴</span>
              <input type="text" class="zxc" name="recommend" required id="recommend">
+        </div>
+        <div class="row">
+            <span class="asd">이미지</span>
+            <input type="file" class="zxc" name="img" id="img">
         </div>
 
     </div>
@@ -71,7 +75,7 @@
 <br/>
 
 <br/>
-<div id="tableTable">
+<div id="tableTable" style="margin-top: 200px">
 
 </div>
 
@@ -110,7 +114,7 @@
             for (var i in data) {
                 table += "<tr>"
                 table += "<td>" + ++iddx + "</td>"
-                table += "<td>" + data[i].name + "</td>"
+                table += "<td> <a href='status?name="+data[i].name+"'> " + data[i].name + "</a></td>"
                 table += "<td>" + data[i].addr + "</td>"
                 table += "<td>" + data[i].type + "</td>"
                 table += "<td>" + data[i].recommend + "</td>"
@@ -159,10 +163,10 @@
                 $("#addr").val('');
                 $("#type").val('');
                 $("#recommend").val('');
-                $("#name").attr('disabled',false);
+                $("#name").attr('readonly',false);
 
             });
-            $(document).on('click','.lkj',function(){
+            $(document).on('click','.alterBtn',function(){
                 let name = $(this).attr('id');
 
                 $.ajax({
@@ -175,7 +179,7 @@
                         $("#addr").val(data[0].addr);
                         $("#type").val(data[0].type);
                         $("#recommend").val(data[0].recommend);
-                        $("#name").attr('disabled',false);
+                        $("#name").attr('readonly',true);
 
                     }
                 });

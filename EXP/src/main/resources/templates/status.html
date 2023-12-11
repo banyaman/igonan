@@ -5,21 +5,45 @@
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" >
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/status.css">
 </head>
 <body>
-<div>
-<!--    -->
-</div>
-<div>
 
-</div>
-<div>
+<div id="container1">
+    <!-- 첫 번째 div -->
+    <div id="firstDiv" >
+        <h2 th:text="${foodInfo.name}"></h2>
+    </div>
 
-</div>
-<div>
+    <!-- 두 번째 div -->
+    <div id="secondDiv">
+        <!-- 왼쪽 이미지 -->
+        <div id="leftImage">
+            <img th:src="@{'/FoodImage/' + ${image}}" alt="이미지가 없습니다." class="foodImage">
+        </div>
 
-</div>
+        <!-- 오른쪽 텍스트 -->
+        <div id="rightText">
+            <p th:text="'분류 : '+ ${foodInfo.getType()}">
+            <p th:text="'추천 메뉴 : '+ ${foodInfo.getRecommend()}">
+            <p th:text="'주소 : '+ ${foodInfo.getAddr()}">
+        </div>
+    </div>
 
+    <!-- 세 번째 구역 -->
+    <div id="thirdDiv">
+        <!-- 오른쪽 정렬 텍스트 -->
+        <div id="rightAlignedText">
+            <p th:text="'등록 날짜 : '+${foodInfo.getUptime()}">
+        </div>
+    </div>
+
+    <!-- 네 번째 구역 - 버튼 -->
+    <div id="fourthDiv">
+
+        <button class="igonanButton" onclick="location.href='main'">메인</button>
+    </div>
+</div>
 
 
 

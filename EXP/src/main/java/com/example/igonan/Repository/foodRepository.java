@@ -15,10 +15,14 @@ public interface foodRepository extends JpaRepository<food,String> {
     @Query("select f from food f where f.recommend LIKE %:recommend%")
     List<food> selectRecommend(@Param("recommend") String recommend);
 
-//    @Query("select count(*) from food f where f.recommend LIKE %:recommend or f.type like %:recommend")
+     @Query("select f from food f where f.name LIKE %:name% or f.addr LIKE %:name% or f.type LIKE %:name% or f.recommend LIKE %:name%")
+    List<food> selectForSearchIndexDataReturn(@Param("name") String name);
+
+    //    @Query("select count(*) from food f where f.recommend LIKE %:recommend or f.type like %:recommend")
 //    List<food> selectCountRecommendSearch(@Param("recommend") String recommend);
 
- @Query("select f from food f where f.name LIKE %:name% or f.addr LIKE %:name% or f.type LIKE %:name% or f.recommend LIKE %:name%")
- List<food> selectForSearchIndexDataReturn(@Param("name") String name);
+
+
+
 
 }
